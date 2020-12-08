@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import store from "./data/store";
+import { Provider } from "react-redux";
 
-let render = () => {
-  let state = store.getState();
 
-  ReactDOM.render(
-    <React.StrictMode>
+let state = store.getState();
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={ store }>
       <App
         player1={state.player1}
         player2={state.player2}
@@ -18,13 +20,13 @@ let render = () => {
         p1serving={state.p1serving}
         winner={state.winner}
       />
-    </React.StrictMode>,
-    document.getElementById('root')
-  );
-}
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-render();
-store.subscribe(render); 
+
+
 //sets up subscription to store, so when the state updates render will be run again.
 
 //all redux stuff is in ./data

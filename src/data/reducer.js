@@ -15,9 +15,17 @@ const incrementPlayer1 = (state) => {
   }
   
   const checkServer = (state) => {
-    return {
-      ...state,
-      p1serving: (state.player1 + state.player2) % 5 === 0 ? !state.p1serving : state.p1serving,
+    if (state.player1 >= 20 && state.player2 >= 20){
+      return {
+        ...state,
+        p1serving: (state.player1 + state.player2) % 2 === 0 ? !state.p1serving : state.p1serving,
+      } 
+    }
+    else {
+      return {
+        ...state,
+        p1serving: (state.player1 + state.player2) % 5 === 0 ? !state.p1serving : state.p1serving,
+      }
     }
   }
   
