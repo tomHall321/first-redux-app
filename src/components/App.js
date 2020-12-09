@@ -1,11 +1,11 @@
 import Header from "./Header";
 import Game from "./Game";
 
-const App = ({gameStarted}) => (
+const App = () => (
   <>
     {/* header */}
     <Header/>
-    <Game />
+    <Game/>
 
   </>
 );
