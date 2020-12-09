@@ -9,9 +9,6 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={ store }>
       <App
-        onIncrementPlayer1={() => store.dispatch({type:"INCREMENTPLAYER1"})}
-        onIncrementPlayer2={() => store.dispatch({type:"INCREMENTPLAYER2"})}
-        handleReset={ () => store.dispatch({ type: "RESET" }) }
       />
     </Provider>
   </React.StrictMode>,

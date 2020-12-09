@@ -7,20 +7,21 @@ import { connect } from "react-redux";
 // in the same directory, so path is short
 import Player from "./Player";
 
-// mapStateToProps: maps the current state (from the store)
-// to the props that get passed into the wrapped component
-// needs to return an object literal which gets merged in
-// to any other props being passed in
+
 const mapStateToProps = state => {
   return {
-    player: 1,
+    player: state.p1Name,
     servingPlayer: state.p1serving,
     playerScore: state.player1,
     winner: state.winner,
   };
 };
 
-// use the connect function to connect mapStateToProps
-// to the React component we want to wrap
-// returns a new React component
-export default connect(mapStateToProps)(Player);
+const mapDispatchToProps = dispatch => {
+  return {
+    playerIncrement: () => dispatch({ type: "INCREMENTPLAYER1"}),
+  };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Player);

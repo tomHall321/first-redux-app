@@ -1,11 +1,21 @@
-const ResetButton = ({handleReset}) => {
-    return(
-        <button 
-            onClick={handleReset}
-            className="btn btn-danger">
-            Reset
-        </button>
-    );
-}
+import { connect } from "react-redux";
 
-export default ResetButton;
+// import the React component that we want to wrap
+// in the same directory, so path is short
+import ResetButton from "./ResetButton";
+
+
+const mapStateToProps = state => {
+  return {
+    handleReset: state.handleReset,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    handleReset: () => dispatch({ type: "RESET"}),
+  };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ResetButton);
