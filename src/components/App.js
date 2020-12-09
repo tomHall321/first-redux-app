@@ -1,29 +1,22 @@
 import ResetButton from "./ResetBtn";
 import WinnerMessage from "./Winner";
 import Header from "./Header";
-import Player from "./Player";
+import Player1 from "./Player/Player1";
+import Player2 from "./Player/Player2";
 
-const App = ({player1, player2, onIncrementPlayer1, onIncrementPlayer2, handleReset, p1serving, winner}) => (
+const App = ({onIncrementPlayer1, onIncrementPlayer2, handleReset}) => (
   <>
     {/* header */}
     <Header/>
 
     {/* scores */}
     <div className="row mb-4">
-      <Player 
-          player={ 1 }
-          servingPlayer={ p1serving }
-          playerScore={ player1 }
+      <Player1 
           playerIncrement={ onIncrementPlayer1 }
-          winner={ winner }
       />
 
-      <Player 
-          player={ 2 }
-          servingPlayer={ !p1serving }
-          playerScore={ player2 }
+      <Player2 
           playerIncrement={ onIncrementPlayer2 }
-          winner={ winner }
       />
     </div>
 
@@ -33,7 +26,9 @@ const App = ({player1, player2, onIncrementPlayer1, onIncrementPlayer2, handleRe
       <hr />
       
       { /* reset button */}
-    <ResetButton/>
+    <ResetButton
+      handleReset={handleReset}
+    />
      {/* need to pass a prop to parent component if it's declared at child component */}
   </>
 );

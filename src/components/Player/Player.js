@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "../IncrementBtn";
 
 const Player = ({winner, player, servingPlayer, playerScore, playerIncrement}) => {
     return(
