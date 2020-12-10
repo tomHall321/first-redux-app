@@ -1,19 +1,20 @@
 import { connect } from "react-redux";
+import { patchGame } from "../../data/action/api";
 
 import Player from "./Player";
 
 const mapStateToProps = state => {
   return {
-    player: state.p2Name,
-    servingPlayer : !state.p1serving,
-    playerScore: state.player2,
-    winner: state.winner,
+    player: state.player_2.name,
+    servingPlayer: state.player_2.serving,
+    playerScore: state.player_2.score,
+    winner: state.complete,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    playerIncrement: () => dispatch({ type: "INCREMENTPLAYER2"}),
+    playerIncrement: () => dispatch(patchGame(2)),
   };
 };
 

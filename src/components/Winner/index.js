@@ -12,8 +12,10 @@ import WinnerMessage from "./WinnerMessage";
 // needs to return an object literal which gets merged in
 // to any other props being passed in
 const mapStateToProps = state => {
+  let p1Winner = state.player_1.won;
+  let p2Winner = state.player_2.won;
   return {
-    winner: state.winner,
+    winner: p1Winner ? 1 : p2Winner ? 2 : 0,
   };
 };
 

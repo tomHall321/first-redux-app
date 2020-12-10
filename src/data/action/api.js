@@ -1,4 +1,3 @@
-import { saveSettings} from './state';
 import axios from '../axios';
 
 export const postGame = ({ p1Name, p2Name, winningScore, alternateEvery }) => {
@@ -9,7 +8,18 @@ export const postGame = ({ p1Name, p2Name, winningScore, alternateEvery }) => {
             winning_score: winningScore,
             change_serve: alternateEvery,
         }).then(({ data }) => {
-            dispatch(saveSettings(data.data));
+            dispatch({ type: "UPDATE", data: data.data });
         });
     };
 };
+
+export const patchGame = player => {
+    return (dispatch, getState) => {
+        let id = getState().id;
+        axios.patch(`${id}/score`, {
+            player: player
+        }).then(({ data }) => {
+            dispatch({ type: "UPDATE", data: data.data });
+        });
+    }
+}

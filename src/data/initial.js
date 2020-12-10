@@ -1,4 +1,5 @@
 const initial = {
+    gameStarted : false,
     "id": null,
     "complete": false,
     "winning_score": 21,
@@ -17,6 +18,7 @@ const initial = {
     }
   
 }
+
 // {
 //     player1: 0,
 //     player2: 0,

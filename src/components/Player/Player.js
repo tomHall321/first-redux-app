@@ -11,7 +11,7 @@ const Player = ({winner, player, servingPlayer, playerScore, playerIncrement}) =
                 <button 
                     className="form-control btn btn-success"
                     onClick={ playerIncrement }
-                    disabled={ winner !== 0 }
+                    disabled={ winner }
                     >+
                 </button>
             

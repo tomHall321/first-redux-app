@@ -2,11 +2,11 @@ import { connect } from "react-redux";
 import Form from './Form';
 import { postGame } from '../../data/action/api';
 
-const mapStateToProps = ({ p1Name, p2Name, winningScore, alternateEvery }) => ({
-    p1Name,
-    p2Name,
-    winningScore,
-    alternateEvery,
+const mapStateToProps = (state) => ({
+    p1Name: state.player_1.name,
+    p2Name: state.player_2.name,
+    winningScore: state.winning_score,
+    alternateEvery: state.change_serve,
 });
 
 const mapDispatchToProps = (dispatch) => {
