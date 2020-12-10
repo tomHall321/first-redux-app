@@ -5,7 +5,7 @@ import WinnerMessage from "../Winner";
 import Player1 from "../Player/Player1";
 import Player2 from "../Player/Player2";
 
-const Game = ({ onIncrementPlayer1, onIncrementPlayer2, handleReset, gameStarted }) => (
+const Game = ({ onIncrementPlayer1, onIncrementPlayer2, gameStarted }) => (
     !gameStarted ? 
     <Form/> : 
     <>
@@ -19,8 +19,7 @@ const Game = ({ onIncrementPlayer1, onIncrementPlayer2, handleReset, gameStarted
     </div>
     <WinnerMessage/>
       <hr />
-    <ResetButton
-    />
+    <ResetButton/>
     </>
     
 );
