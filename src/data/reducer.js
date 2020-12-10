@@ -8,10 +8,19 @@ const update = (state, action) => {
   }
 }
 
+export const showResults = (state, action) => {
+  return {
+      ...state,
+      loaded: true,
+      results: action.results,
+  }
+}
+
 let reducer = (state, action) => {
   switch (action.type) {
     case "UPDATE": return update(state, action);
     case "RESET": return initial;
+    case "GET_RESULTS" : return showResults(state, action);
     default: return state;
   }
 }

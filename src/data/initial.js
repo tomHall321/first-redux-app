@@ -1,5 +1,6 @@
 const initial = {
     gameStarted : false,
+    loaded: false,
     "id": null,
     "complete": false,
     "winning_score": 21,

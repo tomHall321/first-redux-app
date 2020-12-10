@@ -4,24 +4,24 @@ import Form from "../Form";
 import WinnerMessage from "../Winner";
 import Player1 from "../Player/Player1";
 import Player2 from "../Player/Player2";
+import Loading from '../Loading/';
 
-const Game = ({ onIncrementPlayer1, onIncrementPlayer2, gameStarted }) => (
-    !gameStarted ? 
-    <Form/> : 
+const Game = ({ gameStarted }) => (
+  !gameStarted ?
+    <Loading>
+      <Form />
+    </Loading>
+    :
     <>
-    <div className="row mb-4">
-      <Player1 
-          playerIncrement={ onIncrementPlayer1 }
-        />
-      <Player2 
-          playerIncrement={ onIncrementPlayer2 }
-        />
-    </div>
-    <WinnerMessage/>
+      <div className="row mb-4">
+        <Player1 />
+        <Player2 />
+      </div>
+      <WinnerMessage />
       <hr />
-    <ResetButton/>
+      <ResetButton />
     </>
-    
+
 );
 
 export default Game;

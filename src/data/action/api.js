@@ -23,3 +23,11 @@ export const patchGame = player => {
         });
     }
 }
+
+export const getResults = () => {
+    return (dispatch) => {
+        axios.get("/").then(({ data }) => {
+            dispatch({ type: "GET_RESULTS", data: data.data });
+        });
+    }
+}
