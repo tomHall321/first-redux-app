@@ -6,7 +6,7 @@ const mapStateToProps = ({ loaded }) => ({ loaded });
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleMount: (data) => dispatch(getResults(data))
+        handleMount: () => dispatch(getResults())
     }
 }
 

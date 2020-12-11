@@ -11,8 +11,8 @@ const update = (state, action) => {
 export const showResults = (state, action) => {
   return {
       ...state,
+      results: action.data,
       loaded: true,
-      results: action.results,
   }
 }
 

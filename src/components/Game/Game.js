@@ -5,12 +5,11 @@ import WinnerMessage from "../Winner";
 import Player1 from "../Player/Player1";
 import Player2 from "../Player/Player2";
 import Loading from '../Loading/';
+import Results from '../Results/';
 
 const Game = ({ gameStarted }) => (
   !gameStarted ?
-    <Loading>
-      <Form />
-    </Loading>
+    <Form />
     :
     <>
       <div className="row mb-4">
@@ -20,6 +19,10 @@ const Game = ({ gameStarted }) => (
       <WinnerMessage />
       <hr />
       <ResetButton />
+
+      <Loading>
+        <Results />
+      </Loading>
     </>
 
 );

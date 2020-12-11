@@ -1,8 +1,9 @@
 const initial = {
     gameStarted : false,
     loaded: false,
-    "id": null,
-    "complete": false,
+    results: [],
+    id: null,
+    complete: false,
     "winning_score": 21,
     "change_serve": 5,
     "player_1": {
